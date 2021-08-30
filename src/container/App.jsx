@@ -1,6 +1,6 @@
 import '../styles/App.css';
-import FunctionComponent from '../components/FunctionComponent';
-import ClassComponent from '../components/ClassComponent';
+import FunctionComponent from '../components/FunctionComponent/FunctionComponent';
+import ClassComponent from '../components/ClassComponent/ClassComponent';
 
 const invitados = [
   {nombre: "Nicolas", estaEnLista : true, tarea: "papas fritas"},
@@ -14,7 +14,7 @@ function App() {
       <h3>Invitados:</h3>
         {/* forma dinámica */}
         <ul>
-          {invitados.map((invitado, index) => <ClassComponent nombre={invitado.nombre} estaEnLista={invitado.estaEnLista} key={index}/> )}
+          {invitados.map((invitado, index) => <ClassComponent y="invitado" nombre={invitado.nombre} estaEnLista={invitado.estaEnLista} key={index}/> )}
         </ul>  
       {/* forma estática    
       <ClassComponent nombre="Nicolas" estaEnLista={true} />
@@ -24,7 +24,7 @@ function App() {
       <h3>Tareas: </h3>
         {/* forma dinámica */}
         <ul>
-          {invitados.map((invitado, index) => <FunctionComponent nombre={invitado.nombre} tarea={invitado.tarea} key={index}/>)}
+          {invitados.map((invitado, index) => <FunctionComponent x="tareas" nombre={invitado.nombre} tarea={invitado.tarea} key={index}/>)}
         </ul>
      {/* forma estática 
       <FunctionComponent nombre="Nicolas" tarea="papas fritas" />
